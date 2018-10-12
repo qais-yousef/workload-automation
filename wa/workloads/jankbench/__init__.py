@@ -228,6 +228,8 @@ class JankbenchRunMonitor(threading.Thread):
                     if self.regex.search(line):
                         self.run_ended.set()
 
+        proc.terminate()
+
     def stop(self):
         self.stop_event.set()
         self.join()
